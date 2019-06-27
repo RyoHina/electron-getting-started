@@ -32,4 +32,5 @@ ipcMain.on('message-id', (event, data) => {
     event.sender.send('message-id2', '[By event.sender]message from main.js')
     // send by BrowserWindow
     mainWindow.send('message-id2', '[By BrowserWindow]message from main.js')
+    //mainWindow.webContents.send('message-id2', '[By BrowserWindow]message from main.js')  // also ok
 })
