@@ -7,19 +7,26 @@
   <title>Hello World!</title>
   <style>
     body {
-      margin: 0
+      margin: 0px;
     }
 
     .header {
-      -webkit-user-select: none;
-      -webkit-app-region: drag;
-
+      /* fix boder fusion  */
+      border: 1px solid transparent;
       margin: 0;
       padding: 0;
 
       width: 100%;
-      height: 40px;
+      height: 39px;
       background: burlywood;
+    }
+
+    .header .center {
+      -webkit-user-select: none;
+      -webkit-app-region: drag;
+      width: auto;
+      height: 36px;
+      margin: 4px 4px 0 4px
     }
 
     .header button {
@@ -29,13 +36,17 @@
       background: red;
       -webkit-app-region: no-drag;
       border: none;
+      margin-top: -5px;
+      margin-right: -4px;
     }
   </style>
 </head>
 
 <body>
   <div class='header'>
-    <button id="btn-close">X</button>
+    <div class='center'>
+      <button id="btn-close">X</button>
+    </div>
   </div>
   <h1>Hello World!</h1>
   We are using node <script>
