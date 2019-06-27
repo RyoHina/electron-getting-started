@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  We are using node <script>
+    document.write(process.versions.node)
+  </script>,
+  Chrome <script>
+    document.write(process.versions.chrome)
+  </script>,
+  and Electron <script>
+    document.write(process.versions.electron)
+  </script>.
+
+  <script>
+    const {
+      remote
+    } = require('electron')
+
+    alert(remote.getGlobal('theName'))
+
+    // cannot change theName directory, ERROR
+    // remote.getGlobal('theName') = "xxx" // ERROR
+
+    //change theObj name
+    remote.getGlobal('theObj').name = "Changed the obj text."
+    alert(remote.getGlobal('theObj').name)
+  </script>
+</body>
+
+</html>
