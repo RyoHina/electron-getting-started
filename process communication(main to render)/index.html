@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  We are using node <script>
+    document.write(process.versions.node)
+  </script>,
+  Chrome <script>
+    document.write(process.versions.chrome)
+  </script>,
+  and Electron <script>
+    document.write(process.versions.electron)
+  </script>.
+  <br>
+  <button id="btn-async">Send Async Message</button>
+
+  <script>
+    const {
+      ipcRenderer
+    } = require('electron');
+
+    document.getElementById('btn-async').addEventListener('click', () => {
+      ipcRenderer.send("message-id", "[Async]This message from render process!")
+    })
+
+    ipcRenderer.on('message-id2', (event, message) => {
+      alert(message)
+    })
+  </script>
+</body>
+
+</html>
