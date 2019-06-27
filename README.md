@@ -1,8 +1,5 @@
 # electron-getting-started
 
-### getting-started
-The code copied from https://electronjs.org.
-
 RUN: 
 	```npm start```
   
@@ -12,4 +9,3 @@ BUILD PACKAGE:
 BUILD INSTALLER
 	```electron-builder --platform=win32  --arch=ia32```
 	
-### process communication(render process -> main process)
