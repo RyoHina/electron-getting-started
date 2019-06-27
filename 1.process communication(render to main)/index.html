@@ -35,6 +35,8 @@
     document.getElementById('btn-async').addEventListener('click', () => {
       ipcRenderer.send("message-id", "[Async]This message from render process!")
     })
+
+    // Note, Use ipcRender.sendTo() send message to another render process
   </script>
 </body>
 
